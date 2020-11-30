@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<!--    <link href="/css/japan.css" th:href="@{/css/japan.css}" rel="stylesheet"></link>-->
+    <meta charset="utf-8" />
+    <title>全国版</title>
+</head>
+
+<body>
+<!-- PageBody -->
+<div id="pagebody">
+
+    <!-- PageHeader -->
+    <div id="header">
+<!--        <h1>-->
+<!--            <a href="/japan/"><img th:src="@{/image/weatherLogo.png}"-->
+<!--                                   alt="お天気API"></a>-->
+<!--        </h1>-->
+        <h2>
+            <a id="clock">[[${viewDate}]]</a>
+        </h2>
+    </div>
+
+    <!-- infoBar -->
+    <div id="infobar">
+        <ul>
+            <li>都市名	：[[${cityName}]]</li>
+            <li>最高気温	：[[${temp_max}]]℃</li>
+            <li>最低気温	：[[${temp_min}]]℃</li>
+            <li>天気	：[[${weather}]]</li>
+            <li>湿度	：[[${humid}]]</li>
+            <li>風速	：[[${windSpeed}]]</li>
+
+            <li>[[${pollen}]]</li>
+        </ul>
+    </div>
+
+    <!-- JapanMap -->
+    <table id="japan-map">
+
+        <!-- input valueはAPI接続時のURLの一部になる -->
+        <tr>
+            <td colspan="22" rowspan="4">&nbsp;</td>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formhokkaido" action="/japan/">
+                <input type="hidden" value="Hokkaidō" name="cityName"><a
+                    href="javascript:formhokkaido.submit()" id="Hokkaidō">北海道</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formaomori" action="/japan/">
+                <input type="hidden" value="Aomori-ken" name="cityName"><a
+                    href="javascript:formaomori.submit()" id="aomori">青森県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td class="pref"><form method="POST" name="formakita"
+                                   action="/japan/">
+                <input type="hidden" value="Akita-ken" name="cityName"><a
+                    href="javascript:formakita.submit()" id="akita">秋田県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formiwate" action="/japan/">
+                <input type="hidden" value="Iwate-ken" name="cityName"><a
+                    href="javascript:formiwate.submit()" id="iwate">岩手県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="15" rowspan="2">&nbsp;</td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formishikawa" action="/japan/">
+                <input type="hidden" value="Ishikawa-ken" name="cityName"><a
+                    href="javascript:formishikawa.submit()" id="ishikawa">石川県</a>
+            </form></td>
+            <td colspan="5">&nbsp;</td>
+            <td class="pref"><form method="POST" name="formyamagata"
+                                   action="/japan/">
+                <input type="hidden" value="Yamagata-ken" name="cityName"><a
+                    href="javascript:formyamagata.submit()" id="yamagata">山形県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formmiyagi" action="/japan/">
+                <input type="hidden" value="Miyagi-ken" name="cityName"><a
+                    href="javascript:formmiyagi.submit()" id="miyagi">宮城県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formtoyama" action="/japan/">
+                <input type="hidden" value="Toyama-ken" name="cityName"><a
+                    href="javascript:formtoyama.submit()" id="toyama">富山県</a>
+            </form></td>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formniigata" action="/japan/">
+                <input type="hidden" value="Niigata-ken" name="cityName"><a
+                    href="javascript:formniigata.submit()" id="niigata">新潟県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formfukushima" action="/japan/">
+                <input type="hidden" value="Fukushima-ken" name="cityName"><a
+                    href="javascript:formfukushima.submit()" id="fukushima">福島県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="13">&nbsp;</td>
+            <td colspan="4" class="pref"><form method="POST"
+                                               name="formfukui" action="/japan/">
+                <input type="hidden" value="Fukui-ken" name="cityName"><a
+                    href="javascript:formfukui.submit()" id="fukui">福井県</a>
+            </form></td>
+            <td rowspan="2" class="pref"><form method="POST"
+                                               name="formgifu" action="/japan/">
+                <input type="hidden" value="Gifu-ken" name="cityName"><a
+                    href="javascript:formgifu.submit()" id="gifu">岐阜県</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formnagano" action="/japan/">
+                <input type="hidden" value="Nagano-ken" name="cityName"><a
+                    href="javascript:formnagano.submit()" id="nagano">長野県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formgunma" action="/japan/">
+                <input type="hidden" value="Gunma-ken" name="cityName"><a
+                    href="javascript:formgunma.submit()" id="gunma">群馬県</a>
+            </form></td>
+            <td class="pref"><form method="POST" name="formtochigi"
+                                   action="/japan/">
+                <input type="hidden" value="Tochigi-ken" name="cityName"><a
+                    href="javascript:formtochigi.submit()" id="tochigi">栃木県</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formibaraki" action="/japan/">
+                <input type="hidden" value="Ibaraki-ken" name="cityName"><a
+                    href="javascript:formibaraki.submit()" id="ibaraki">茨城県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="5">&nbsp;</td>
+            <td class="pref"><form method="POST" name="formyamaguchi"
+                                   action="/japan/">
+                <input type="hidden" value="Yamaguchi-ken" name="cityName"><a
+                    href="javascript:formyamaguchi.submit()" id="yamaguchi">山口県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formshimane" action="/japan/">
+                <input type="hidden" value="Shimane-ken" name="cityName"><a
+                    href="javascript:formshimane.submit()" id="shimane">島根県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formtottori" action="/japan/">
+                <input type="hidden" value="Tottori-ken" name="cityName"><a
+                    href="javascript:formtottori.submit()" id="tottori">鳥取県</a>
+            </form></td>
+            <td rowspan="2" class="pref"><form method="POST"
+                                               name="formhyogo" action="/japan/">
+                <input type="hidden" value="Hyōgo-ken" name="cityName"><a
+                    href="javascript:formhyogo.submit()" id="hyogo">兵庫県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formkyoto" action="/japan/">
+                <input type="hidden" value="Kyoto" name="cityName"><a
+                    href="javascript:formkyoto.submit()" id="kyoto">京都府</a>
+            </form></td>
+            <td colspan="4" class="pref"><form method="POST"
+                                               name="formshiga" action="/japan/">
+                <input type="hidden" value="Shiga-ken" name="cityName"><a
+                    href="javascript:formshiga.submit()" id="shiga">滋賀県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formyamanashi" action="/japan/">
+                <input type="hidden" value="Yamanashi-ken" name="cityName"><a
+                    href="javascript:formyamanashi.submit()" id="yamanashi">山梨県</a>
+            </form></td>
+            <td class="pref"><form method="POST" name="formsaitama"
+                                   action="/japan/">
+                <input type="hidden" value="Saitama-ken" name="cityName"><a
+                    href="javascript:formsaitama.submit()" id="saitama">埼玉県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="pref"><form method="POST"
+                                               name="formnagasaki" action="/japan/">
+                <input type="hidden" value="Nagano-ken" name="cityName"><a
+                    href="javascript:formnagasaki.submit()" id="nagasaki">長崎県</a>
+            </form></td>
+            <td rowspan="2" class="pref"><form method="POST"
+                                               name="formsaga" action="/japan/">
+                <input type="hidden" value="Saga-ken" name="cityName"><a
+                    href="javascript:formsaga.submit()" id="saga">佐賀県</a>
+            </form></td>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formfukuoka" action="/japan/">
+                <input type="hidden" value="Fukuoka-ken" name="cityName"><a
+                    href="javascript:formfukuoka.submit()" id="fukuoka">福岡県</a>
+            </form></td>
+            <td>&nbsp;</td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formhiroshima" action="/japan/">
+                <input type="hidden" value="Hiroshima-ken" name="cityName"><a
+                    href="javascript:formhiroshima.submit()" id="hiroshima">広島県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formokayama" action="/japan/">
+                <input type="hidden" value="Okayama-ken" name="cityName"><a
+                    href="javascript:formokayama.submit()" id="okayama">岡山県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formosaka" action="/japan/">
+                <input type="hidden" value="Ōsaka-fu" name="cityName"><a
+                    href="javascript:formosaka.submit()" id="osaka">大阪府</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formnara" action="/japan/">
+                <input type="hidden" value="Nara-ken" name="cityName"><a
+                    href="javascript:formnara.submit()" id="nara">奈良県</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formmie" action="/japan/">
+                <input type="hidden" value="Mie-ken" name="cityName"><a
+                    href="javascript:formmie.submit()" id="mie">三重県</a>
+            </form></td>
+            <td class="pref"><form method="POST" name="formaichi"
+                                   action="/japan/">
+                <input type="hidden" value="Aichi-ken" name="cityName"><a
+                    href="javascript:formaichi.submit()" id="aichi">愛知県</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formshizuoka" action="/japan/">
+                <input type="hidden" value="Shizuoka-ken" name="cityName"><a
+                    href="javascript:formshizuoka.submit()" id="shizuoka">静岡県</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formkanagawa" action="/japan/">
+                <input type="hidden" value="Kanagawa-ken" name="cityName"><a
+                    href="javascript:formkanagawa.submit()" id="kanagawa">神奈川県</a>
+            </form></td>
+            <td class="pref"><form method="POST" name="formtokyo"
+                                   action="/japan/">
+                <input type="hidden" value="Tokyo" name="cityName"><a
+                    href="javascript:formtokyo.submit()" id="tokyo">東京都</a>
+            </form></td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formchiba" action="/japan/">
+                <input type="hidden" value="Chiba-ken" name="cityName"><a
+                    href="javascript:formchiba.submit()" id="chiba">千葉県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="pref"><form method="POST"
+                                               name="formkumamoto" action="/japan/">
+                <input type="hidden" value="Kumamoto-ken" name="cityName"><a
+                    href="javascript:formkumamoto.submit()" id="kumamoto">熊本県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formoita" action="/japan/">
+                <input type="hidden" value="Ōita-ken" name="cityName"><a
+                    href="javascript:formoita.submit()" id="oita">大分県</a>
+            </form></td>
+            <td colspan="6">&nbsp;</td>
+            <td colspan="4" class="pref"><form method="POST"
+                                               name="formwakayama" action="/japan/">
+                <input type="hidden" value="Wakayama-ken" name="cityName"><a
+                    href="javascript:formwakayama.submit()" id="wakayama">和歌山県</a>
+            </form></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="3">&nbsp;</td>
+            <td colspan="2" rowspan="2" class="pref"><form method="POST"
+                                                           name="formmiyazaki" action="/japan/">
+                <input type="hidden" value="Miyazaki-ken" name="cityName"><a
+                    href="javascript:formmiyazaki.submit()" id="miyazaki">宮崎県</a>
+            </form></td>
+            <td rowspan="2">&nbsp;</td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formehime" action="/japan/">
+                <input type="hidden" value="Ehime-ken" name="cityName"><a
+                    href="javascript:formehime.submit()" id="ehime">愛媛県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formkagawa" action="/japan/">
+                <input type="hidden" value="Kagawa-ken" name="cityName"><a
+                    href="javascript:formkagawa.submit()" id="kagawa">香川県</a>
+            </form></td>
+            <td colspan="15" rowspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formkochi" action="/japan/">
+                <input type="hidden" value="Kōchi-ken" name="cityName"><a
+                    href="javascript:formkochi.submit()" id="kochi">高知県</a>
+            </form></td>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formtokushima" action="/japan/">
+                <input type="hidden" value="Tokushima-ken" name="cityName"><a
+                    href="javascript:formtokushima.submit()" id="tokushima">徳島県</a>
+            </form></td>
+        </tr>
+        <tr>
+            <td colspan="3" class="pref"><form method="POST"
+                                               name="formkagoshima" action="/japan/">
+                <input type="hidden" value="Kagoshima-ken" name="cityName"><a
+                    href="javascript:formkagoshima.submit()" id="kagoshima">鹿児島県</a>
+            </form></td>
+            <td colspan="5">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="pref"><form method="POST"
+                                               name="formokinawa" action="/japan/">
+                <input type="hidden" value="Okinawa-ken" name="cityName"><a
+                    href="javascript:formokinawa.submit()" id="okinawa">沖縄県</a>
+            </form></td>
+            <td colspan="8">&nbsp;</td>
+        </tr>
+    </table>
+
+    <!-- Footer -->
+    <div id="footer">
+        <form method="POST" action="/top/">
+            <input type="submit" value="トップへ戻る" size="60"></input>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

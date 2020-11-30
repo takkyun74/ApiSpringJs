@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>プロトタイプ画面</title>
+</head>
+<body>
+<h1>お天気API</h1>
+<h2>花粉情報からその日の生活のしやすさを提供します。</h2>
+<form method="POST" action="/index/">
+    探したい場所 <select name="cityName" value="">
+    <optgroup label="北海道">
+        <option value="Hokkaidō">北海道</option>
+    </optgroup>
+    <optgroup label="東北">
+        <option value="Aomori-ken">青森</option>
+        <option value="Iwate-ken">岩手</option>
+        <option value="Miyagi-ken">宮城</option>
+        <option value="Akita-ken">秋田</option>
+        <option value="Yamagata-ken">山形</option>
+        <option value="Fukushima-ken">福島</option>
+    </optgroup>
+    <optgroup label="関東">
+        <option value="Ibaraki-ken">茨城</option>
+        <option value="Tochigi-ken">栃木</option>
+        <option value="Gunma-ken">群馬</option>
+        <option value="Saitama-ken">埼玉</option>
+        <option value="Chiba-ken">千葉</option>
+        <option value="Tokyo">東京</option>
+        <option value="Kanagawa-ken">神奈川</option>
+    </optgroup>
+    <optgroup label="中部地方">
+        <option value="Niigata-ken">新潟</option>
+        <option value="Toyama-ken">富山</option>
+        <option value="Ishikawa-ken">石川</option>
+        <option value="Fukui-ken">福井</option>
+        <option value="Yamanashi-ken">山梨</option>
+        <option value="Nagano-ken">長野</option>
+        <option value="Gifu-ken">岐阜</option>
+        <option value="Shizuoka-ken">静岡</option>
+        <option value="Aichi-ken">愛知</option>
+    </optgroup>
+    <optgroup label="近畿">
+        <option value="Mie-ken">三重</option>
+        <option value="Shiga-ken">滋賀</option>
+        <option value="Kyoto">京都</option>
+        <option value="Ōsaka-fu">大阪</option>
+        <option value="Hyōgo-ken">兵庫</option>
+        <option value="Nara-ken">奈良</option>
+        <option value="Wakayama-ken">和歌山</option>
+    </optgroup>
+    <optgroup label="中国">
+        <option value="Tottori-ken">鳥取</option>
+        <option value="Shimane-ken">島根</option>
+        <option value="Okayama-ken">岡山</option>
+        <option value="Hiroshima-ken">広島</option>
+        <option value="Yamaguchi-ken">山口</option>
+    </optgroup>
+    <optgroup label="四国">
+        <option value="Tokushima-ken">徳島</option>
+        <option value="Kagawa-ken">香川</option>
+        <option value="Ehime-ken">愛媛</option>
+        <option value="Kōchi-ken">高知</option>
+    </optgroup>
+    <optgroup label="九州">
+        <option value="Fukuoka-ken">福岡</option>
+        <option value="Saga-ken">佐賀</option>
+        <option value="Nagasaki-ken">長崎</option>
+        <option value="Kumamoto-ken">熊本</option>
+        <option value="Ōita-ken">大分</option>
+        <option value="Miyazaki-ken">宮崎</option>
+        <option value="Kagoshima-ken">鹿児島</option>
+        <option value="Okinawa-ken">沖縄</option>
+    </optgroup>
+</select> <input type="submit" value="表示" size="30"></input>
+</form>
+
+<p>[[${cityName}]]の[[${viewDate}]]時点の飛散量</p>
+<p>[[${pollen}]]</p>
+
+<form method="POST" action="/top/"><input type="submit" value="トップへ戻る" size="60"></input></form>
+</body>
+</html>

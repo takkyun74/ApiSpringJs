@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/*============================================
+Header
+============================================*/
+#header {
+	text-align: center;
+}
+/*============================================
+Body
+============================================*/
+/*============================================
+InfoBar
+============================================*/
+#infobar {
+	float: left;
+	width:240px;
+	padding: 20px;
+	border-style: solid;
+	border-size: 1px;
+	background-color: white;
+}
+
+/*============================================
+JapanMap
+============================================*/
+#pagebody {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#japan-map {
+	float: left;
+	width: 620px;
+	height:320px;
+	border-collapse: separate;
+	border-spacing: 1px;
+	border-style: solid;
+	border-size: 1px;
+	background-color: aliceblue;
+}
+
+.pref {
+	background: limegreen;
+	min-height: 10px;
+	font-size: 0.7em;
+	text-align: center;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+.pref a {
+	display: block;
+	min-height: 10px;
+	text-decoration: none;
+	color: white;
+}
+
+#Hokkaidō {
+	margin: 20px 0;
+}
+
+/*============================================
+Footer
+============================================*/
+#footer{
+	text-align: center;
+}

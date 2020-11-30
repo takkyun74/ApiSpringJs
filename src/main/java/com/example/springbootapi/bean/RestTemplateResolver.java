@@ -1,4 +1,4 @@
-package com.example.springbootapi.common;
+package com.example.springbootapi.bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
@@ -14,7 +14,7 @@ import java.util.List;
 public class RestTemplateResolver {
 
     @Bean
-    public RestTemplate searchRestTemplate() {
+    public RestTemplate zipCodeSearchRestTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter();
         List<MediaType> supportedMediaTypes = new ArrayList<>(messageConverter.getSupportedMediaTypes());
